@@ -1,29 +1,25 @@
 package com.jsfsample.calc.plain;
 
 import com.jsfsample.calc.Calc;
-import com.jsfsample.calc.CalcProducer;
+import java.util.LinkedList;
 import java.util.List;
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
+import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 import lombok.Getter;
 import lombok.Setter;
 
 @Named
-@RequestScoped
+@ViewScoped
 @Getter @Setter
 public class CalcView extends AbstractBean{
     
-    @Inject
-    private Calc calc;
+    private Calc calc = new Calc();
     
-    @Inject
-    private List<Calc> results;
+    private List<Calc> results = new LinkedList<Calc>();
     
     @PostConstruct
     public void init(){
-        //今回は使ってないですが普通使います(^^;
     }
     
     public void calc(){
@@ -36,6 +32,6 @@ public class CalcView extends AbstractBean{
         if (r % 2 != 0) message("right", "右辺 " + r + " は奇数です");
         
         results.add(0, calc);
-        calc = CalcProducer.getCalc();
+        calc = new Calc();
     }
 }
