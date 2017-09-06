@@ -4,10 +4,8 @@ jdk:
 script:
 - mvn javadoc:javadoc 
 deploy:
-  provider: releases
-  api-key: $GITHUB_API_TOKEN
-  file_glob: true
-  file: docs/apidocs/*
+  provider: pages
   skip_cleanup: true
+  api-key: $GITHUB_API_TOKEN
   on:
     branch: master
