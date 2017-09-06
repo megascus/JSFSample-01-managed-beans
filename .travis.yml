@@ -8,4 +8,4 @@ deploy:
   api-key: $GITHUB_API_TOKEN
   file_glob: true
   file: docs/*
-  skip_cleanup: false
+  skip_cleanup: true
