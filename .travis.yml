@@ -10,4 +10,4 @@ deploy:
   file: docs/*
   skip_cleanup: false
   on:
-    tags: false
+    branch: master
