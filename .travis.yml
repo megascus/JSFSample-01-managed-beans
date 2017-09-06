@@ -9,3 +9,5 @@ deploy:
   file_glob: true
   file: docs/*
   skip_cleanup: true
+  on:
+    branch: master
