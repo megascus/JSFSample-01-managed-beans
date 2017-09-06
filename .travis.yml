@@ -7,7 +7,7 @@ deploy:
   provider: releases
   api-key: $GITHUB_API_TOKEN
   file_glob: false
-  file: docs/*
+  file: docs/**
   skip_cleanup: false
   on:
     tags: false
